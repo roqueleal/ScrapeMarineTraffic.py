@@ -6,8 +6,9 @@ import time
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.options import Options
 from selenium import webdriver
+from webdriver_manager.chrome import ChromeDriverManager
 
-IMO_numbers = #List IMO
+IMO_numbers = [#]
 
 URL = "https://www.marinetraffic.com/en/ais/details/ships/imo:"
 
@@ -16,13 +17,13 @@ options.headless = True
 options.add_argument("--window-size=1920,1200")
 options.add_argument("user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36")
 
-chrome_path = #'chromedriver PATH'
+
 
 dic=[]
 
 for link in IMO_numbers:
     
-    driver = webdriver.Chrome(options=options, executable_path=chrome_path)
+    driver = driver = webdriver.Chrome(ChromeDriverManager().install())
     
     classpath=driver.find_elements_by_xpath("//div[@class='MuiTypography-root MuiTypography-body1 MuiTypography-gutterBottom']")
     
